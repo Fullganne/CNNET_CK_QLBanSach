@@ -1,0 +1,70 @@
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <mat-tab-group>
+      <mat-tab label="Đăng kí"*ngIf="loggedIn">
+
+            <div class="form-register">
+              <div class="register-left">
+                <div class="logo">
+                  <img src="assets/logo.png" alt="">
+                </div>
+
+                <div class="infomation-register">
+                  <label class="lblhover" for="username">Tên đăng nhập</label>
+                  <input class="input-register" type="text" [(ngModel)]="user.username" name="username">
+                  <label class="lblhover" for="email">Số điện thoại</label>
+                  <input class="input-register" type="text" [(ngModel)]="user.email" name="email">
+                  <div *ngIf="errorMessageEM" class="error-message">
+                    {{ errorMessageEM }}
+                  </div>
+                  <label class="lblhover" for="password">Mật khẩu</label>
+                  <input class="input-register" type="password" [(ngModel)]="user.password" name="password">
+                  <label class="lblhover" for="confirm_password">Xác nhận mật khẩu</label>
+                  <input class="input-register" type="password" [(ngModel)]="user.confirmPassword" name="confirm_password">
+                  <div *ngIf="errorMessageMK" class="error-message">
+                    {{ errorMessageMK }}
+                  </div>
+                </div>
+                <div class="btn-register-div">
+                  <button class="btn-register" (click)="register()">Đăng ký</button>
+                </div>
+              </div>
+                <div class="register-right">
+                  <img src=" assets/login-logout/register.jpg" alt="" >
+
+                </div>
+
+            </div>
+
+        </mat-tab>
+        <!-- ----------------dang nhap------------------ -->
+        <mat-tab label="Đăng nhập" >
+            <div class="form-login">
+              <div class="login-left">
+                <img src=" assets/login-logout/login.jpg" alt="" >
+
+              </div>
+              <div class="login-right">
+                  <div class="logo">
+                    <img src="assets/logo.png" alt="">
+                  </div>
+                  <div class="infomation-login">
+                    <label class="lblhover" for="">Số điện thoại</label>
+                    <input  [(ngModel)]="cus.sdt" name="sdt" type="text" class="input-login" >
+                    <label class="lblhover"  for="">Mật khẩu</label>
+                    <input [(ngModel)]="cus.pass" name="pass" type="password"class="input-login" >
+                  </div>
+                  <div class="remember">
+                    <input type="checkbox"style="margin-right:5px;">
+                    <label style="margin-right:70px; " >Nhớ mật khẩu</label>
+                    <label style="float: right;">Quên mật khẩu</label>
+                  </div>
+                  <button class="btn btn-login" (click)="check()">Đăng nhập</button>
+                </div>
+            </div>
+
+          </mat-tab>
+      </mat-tab-group>
+  </div>
+</div>
+

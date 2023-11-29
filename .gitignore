@@ -1,3 +1,5 @@
 .vs
-bin
-obj
+Backend/QLCHS/bin
+Backend/QLCHS/obj
+Fontend/.angular
+Fontend/node_modules
