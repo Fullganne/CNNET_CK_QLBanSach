@@ -1,0 +1,58 @@
+<div
+  class="container"
+  [ngClass]="{ 'sidebar-open-page': QuanLyBanSachService.isSidebarOpen }"
+>
+  <div class="top">
+    <div class="right">
+      <i class="fas fa-list"></i>
+      <p>Danh sách Sách</p>
+    </div>
+    <div class="left">
+      <div class="search">
+        <i class="fab fa-searchengin"></i>
+        <input type="text" placeholder="Tìm kiếm..." />
+      </div>
+      <div class="button">
+        <i class="fas fa-plus"></i>
+        <button routerLinkActive="active" routerLink="/addStudent">Tạo sinh viên</button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <th>Mã số sinh viên</th>
+        <th>Họ và tên</th>
+        <th>Giới tính</th>
+        <th>Ngày sinh</th>
+        <th>Địa chỉ</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Thao tác</th>
+      </tr>
+      <tr *ngFor="let sv of SinhVienList | paginate: {itemsPerPage: 10, currentPage: currentPage}">
+        <td>{{ sv.masv }}</td>
+        <td>{{ sv.hotensv }}</td>
+        <td>{{ sv.gioitinh }}</td>
+        <td>{{ sv.ngaysinh | date : "dd/MM/yyyy" }}</td>
+        <td>{{ sv.diachi }}</td>
+        <td>{{ sv.sodienthoai }}</td>
+        <td>{{ sv.email }}</td>
+        <td class="operation">
+          <button (click)="editSinhVien(sv.masv)">
+            <i style="color: blue" class="fas fa-edit"></i>
+          </button>
+          <button (click)="deleteSinhVien(sv.masv)"><i style="color: red" class="fas fa-trash-alt"></i></button>
+        </td>
+      </tr>
+    </table>
+    <div class="pagination">
+      <pagination-controls  
+      previousText=""
+      nextText=""
+      previousLabel=" "
+      nextLabel=" " 
+      (pageChange)="currentPage=$event"></pagination-controls>
+    </div>
+  </div>
+</div>

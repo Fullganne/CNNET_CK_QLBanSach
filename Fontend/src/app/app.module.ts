@@ -41,6 +41,8 @@ import {ModalComponent} from './component/modal/modal.component';
 import {HttpClientModule } from '@angular/common/http';
 import { AddressComponent } from './component/address/address.component';
 import { MapComponent } from './component/map/map.component';
+import { SidebarComponent } from './pages/admin/Sidebar/Sidebar.component';
+import { TableBookComponent } from './pages/admin/Book/Table-Book/Table-Book.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { MapComponent } from './component/map/map.component';
     CartComponent,
     AddressComponent,
     MapComponent,
+    SidebarComponent,
+    TableBookComponent,
   ],
   imports: [
     BrowserModule,

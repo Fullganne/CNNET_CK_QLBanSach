@@ -9,6 +9,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { LoginComponent } from './component/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { TableBookComponent } from './pages/admin/Book/Table-Book/Table-Book.component';
 
 
 
@@ -51,6 +52,7 @@ const routes: Routes=[
     { path: 'login', component: LoginComponent},
     { path:'admin', component: AdminComponent},
     { path: 'category/:id', component: CategoryComponent},
+    { path: 'bookAdmin', component: TableBookComponent},
 ]
 
 @NgModule({

@@ -3,3 +3,5 @@ Backend/QLCHS/bin
 Backend/QLCHS/obj
 Fontend/.angular
 Fontend/node_modules
+TemplateAdmin/node_modules
+TemplateAdmin/.angular
