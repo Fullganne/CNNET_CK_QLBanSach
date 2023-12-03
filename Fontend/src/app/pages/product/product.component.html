@@ -33,7 +33,7 @@
                 <input type="number" min="0" value="1">
               </div>
               <div class="product-right-button">
-                <button mat-raised-button>THÊM VÀO GIỎ HÀNG</button>
+                <button mat-raised-button (click)="addToCart(product)">THÊM VÀO GIỎ HÀNG</button>
                 <button mat-raised-button routerLink="/payment">MUA NGAY</button>
               </div>
             </div>

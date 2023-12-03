@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<QLBANSACHContext>(option => option.UseSqlServer
-    (builder.Configuration.GetConnectionString("QLBANSACH_CNNET")));
+    (builder.Configuration.GetConnectionString("QLBANSACH")));
 builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
 {
     build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
