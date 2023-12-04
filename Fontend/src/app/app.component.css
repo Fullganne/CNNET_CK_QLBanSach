@@ -52,7 +52,7 @@ header {
     padding-bottom: 10px;
 }
 
-.search-input {
+.search-container input {
     flex: 1;
     padding: 5px 40px 5px 10px;
     border: 1px solid #ccc;
@@ -351,7 +351,6 @@ footer p {
     padding: 5px;
     position: absolute;
     display: none;
-    flex-wrap: wrap;
     width: 100%;
     background-color: #fffd;
     top: 100%;
@@ -359,14 +358,20 @@ footer p {
     box-shadow: 1px 1px 1px 1px #ccc;
     z-index: 10;
 }
-.cartegory-right-bottom-item{
+.wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    position: relative;
     display: flex;
+}
+.cartegory-right-bottom-item{
+    display: inline-flex;
     position: relative;
     width: 30%;
     height: 100%;
     text-align: center;
     padding: 5px 5px;
-    margin: 10px;
     background-color: #fff;
     border-radius: 5px;
     flex-wrap: wrap;

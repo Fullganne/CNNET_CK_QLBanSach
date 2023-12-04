@@ -13,20 +13,14 @@
                 <mat-icon class="search-icon" >search</mat-icon>
             </button>
             <div class="dropdown" id="dropdown">
-                <!-- <div class="dropdown_title">Xu hướng top top - giảm sâu</div>
-                <div class="dropdown_title">Xu hướng top top - giảm sâu</div>
-                <div class="dropdown_title">Xu hướng top top - giảm sâu</div>
-                <div class="dropdown_title">Xu hướng top top - giảm sâu</div>
-                <div class="dropdown_title">Xu hướng top top - giảm sâu</div>
-                <div class="dropdown_title">Xu hướng top top - giảm sâu</div>
-                <div class="dropdown_title">Xu hướng top top - giảm sâu</div>
-                <div class="dropdown_title">Xu hướng top top - giảm sâu</div> -->
-                <div class="cartegory-right-bottom-item" *ngFor="let product of filteredProducts" (click)="navigateToProduct(product.id)">
-                    <div class="productIMG" >
-                      <img [src]="getBookImage(product.id)">
+                <div class="wrapper">
+                    <div class="cartegory-right-bottom-item" *ngFor="let product of filteredProducts" (click)="navigateToProduct(product.id)">
+                        <div class="productIMG" >
+                          <img [src]="getBookImage(product.id)">
+                        </div>
+                        <span class=" btn-outline-secondary" placement="bottom" ngbTooltip={{product.title}}>{{ product.title }}</span>
                     </div>
-                    <span class=" btn-outline-secondary" placement="bottom" ngbTooltip={{product.title}}>{{ product.title }}</span>
-                  </div>
+                </div>
             </div>
         </div>
         <!-- matBadge="15" matBadgeColor="warn" -->
