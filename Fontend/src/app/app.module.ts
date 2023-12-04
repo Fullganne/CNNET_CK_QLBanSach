@@ -42,6 +42,12 @@ import {HttpClientModule } from '@angular/common/http';
 import { AddressComponent } from './component/address/address.component';
 import { MapComponent } from './component/map/map.component';
 
+import { SidebarComponent } from './pages/admin/Sidebar/Sidebar.component';
+import { TableAuthorComponent } from './pages/admin/Author/tableAuthor/tableAuthor.component';
+import { AddAuthorComponent } from './pages/admin/Author/addAuthor/addAuthor.component';
+import { EditAuthorComponent } from './pages/admin/Author/editAuthor/editAuthor.component';
+import { TableBookComponent } from './pages/admin/Book/Table-Book/Table-Book.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +64,11 @@ import { MapComponent } from './component/map/map.component';
     CartComponent,
     AddressComponent,
     MapComponent,
+    SidebarComponent,
+    TableAuthorComponent,
+    AddAuthorComponent,
+    EditAuthorComponent,
+    TableBookComponent,
   ],
   imports: [
     BrowserModule,

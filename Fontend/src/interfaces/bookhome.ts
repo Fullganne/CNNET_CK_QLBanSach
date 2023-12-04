@@ -8,9 +8,4 @@ export interface bookhome {
   publishYear: number;
   available: boolean;
   quantity: number;
-  author: any; //
-  supplier: any; //
-  bookdetails: any[];
-  carts: any[]; //
-  orderdetails: any[];
 }

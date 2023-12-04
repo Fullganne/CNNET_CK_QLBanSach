@@ -1,0 +1,47 @@
+<div
+  class="container"
+  [ngClass]="{ 'sidebar-open-page': QuanLyBanSachService.isSidebarOpen }"
+>
+  <div class="top">
+    <div class="right">
+      <i class="fas fa-list"></i>
+      <p>Danh sách Sách</p>
+    </div>
+    <div class="left">
+      <div class="button" routerLinkActive="active" routerLink="/addBookAdmin">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Giá tiền</th>
+        <th>Giá phần trăm</th>
+        <th>Năm</th>
+        <th>Có sẵn</th>
+        <th>Số lượng</th>
+        <th>Thao tác</th>
+      </tr>
+      <tr *ngFor="let b of BookList">
+        <td>{{b.id}}</td>
+        <td>{{b.title}}</td>
+        <td>{{b.unitPrice}}</td>
+        <td>{{b.pricePercent}}</td>
+        <td>{{b.publishYear}}</td>
+        <td>{{b.available}}</td>
+        <td>{{b.quantity}}</td>
+        <td class="operation">
+          <button>
+            <i style="color: blue" class="fas fa-edit"></i>
+          </button>
+          <button>
+            <i style="color: red" class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

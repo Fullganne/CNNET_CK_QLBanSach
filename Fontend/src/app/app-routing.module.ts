@@ -9,8 +9,10 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { LoginComponent } from './component/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
-
-
+import { TableAuthorComponent } from './pages/admin/Author/tableAuthor/tableAuthor.component';
+import { AddAuthorComponent } from './pages/admin/Author/addAuthor/addAuthor.component';
+import { EditAuthorComponent } from './pages/admin/Author/editAuthor/editAuthor.component';
+import { TableBookComponent } from './pages/admin/Book/Table-Book/Table-Book.component';
 
 const routes: Routes=[
     {
@@ -51,6 +53,11 @@ const routes: Routes=[
     { path: 'login', component: LoginComponent},
     { path:'admin', component: AdminComponent},
     { path: 'category/:id', component: CategoryComponent},
+    { path: 'authorAdmin', component: TableAuthorComponent},
+    { path: 'addAuthorAdmin', component: AddAuthorComponent},
+    { path: 'editAuthorAdmin/:id', component: EditAuthorComponent},
+    { path: 'bookAdmin', component: TableBookComponent},
+    
 ]
 
 @NgModule({

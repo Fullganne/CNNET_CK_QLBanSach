@@ -1,0 +1,19 @@
+<div class="sidebar" [ngClass]="{'sidebar-open': QuanLyBanSachService.isSidebarOpen}">
+  <div class="logo-container">
+      <button class="logo" (click)="toggle()">
+          <i class="fas fa-bars"></i>
+      </button>
+      <div class="logo-text" *ngIf="isSidebarOpen">Admin</div>
+  </div>
+  <ul class="sidebar-list">
+      <li class="sidebar-item" *ngFor="let data of sideData">
+          <a class="sidebar-link" [routerLink]="[data.routerLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <i class="sidebar-icon" [class]="data.icon"></i>
+              <span class="sidebar-text" *ngIf="isSidebarOpen">{{data.text}}</span>
+          </a>
+      </li>
+  </ul>
+</div>
+<div class="sidebar-next">
+  
+</div>
