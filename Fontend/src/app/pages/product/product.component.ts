@@ -9,6 +9,7 @@ import { BookDetail } from '../../../interfaces/bookdetail';
 import { Supplier } from '../../../interfaces/Supplier';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -16,7 +17,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  constructor(private http: HttpClient, private route: ActivatedRoute,private router: Router) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute,private router: Router,private cartService: CartService ) {}
 
   product: bookhome | null = null;
   products: bookhome [] = [];
@@ -132,6 +133,7 @@ export class ProductComponent implements OnInit {
       observer.complete();
     });
   }
+  
 
   getBookImage(bookId: string): string {
     const matchingImage = this.imgbook.find((imgbook) => imgbook.bookId === bookId);
@@ -164,6 +166,11 @@ export class ProductComponent implements OnInit {
       location.reload();
     });
   }
+  addToCart(product: bookhome): void {
+    this.cartService.addToCart(product);
+    // Hiển thị thông báo hoặc cập nhật giao diện người dùng nếu cần
+  }
+  
 
 }
 // function processProductId(productId: string): string | null {

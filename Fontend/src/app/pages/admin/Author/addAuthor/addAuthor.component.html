@@ -1,0 +1,15 @@
+<form (submit)="addAuthors()" action="" style="width: 600px; padding-left: 300px;">
+  <label for="">Id</label>
+  <input type="text" [(ngModel)]="newAuthor.Id" name="Id" id="Id" class="form-control" required placeholder="">
+
+  <label for="">Name</label>
+  <input type="text" [(ngModel)]="newAuthor.Name" name="Name" id="Name" class="form-control" required placeholder="">
+
+  <label for="">Image</label>
+  <input type="text" [(ngModel)]="newAuthor.Image" name="Image" id="Image" class="form-control" required placeholder="">
+
+  <label for="">Des</label>
+  <input type="text" [(ngModel)]="newAuthor.Description" name="Description" id="Description" class="form-control" required placeholder="">
+
+  <button>Thêm</button>
+</form>
