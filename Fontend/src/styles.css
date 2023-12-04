@@ -3,11 +3,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.container {
+  .container {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: 80px; 
+    padding-left: 80px;
   }
   
   .top {
@@ -30,13 +30,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
   .left {
     display: flex;
-  }
-  
-  .left .search {
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    width: 300px;
-    padding-left: 10px;
   }
   
   .left input {
@@ -79,6 +72,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-bottom: 1px solid #ddd;
   }
   
+  td button {
+    border: none;
+  }
   tr:hover {
     background-color: #daf5ff;
     transform: scale(1.02);

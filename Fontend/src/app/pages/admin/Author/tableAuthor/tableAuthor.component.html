@@ -1,0 +1,42 @@
+<div
+  class="container"
+  [ngClass]="{ 'sidebar-open-pageAthor': QuanLyBanSachService.isSidebarOpen }"
+>
+  <div class="top">
+    <div class="right">
+      <i class="fas fa-list"></i>
+      <p>Danh sách Tác giả</p>
+    </div>
+    <div class="left">
+      <div class="button" routerLinkActive="active" routerLink="/addAuthorAdmin">
+        <i class="fas fa-plus"></i>
+      </div>
+    </div>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Ảnh</th>
+        <th>Miêu tả</th>
+        <th>Thao tác</th>
+      </tr>
+      <tr *ngFor="let a of AuthorList">
+        <td>{{a.id}}</td>
+        <td>{{a.name}}</td>
+        <td><img src="{{a.image}}" style="width: 70px; height: 70px;"></td>
+        <td>{{a.description}}</td>
+        <td class="operation">
+          <button (click)="editAuthor(a.id)">
+            <i style="color: blue" class="fas fa-edit"></i>
+          </button>
+          <button (click)="deleteAuthor(a.id)">
+            <i style="color: red" class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+

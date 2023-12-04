@@ -11,16 +11,17 @@ export class TableBookComponent implements OnInit {
   constructor(public QuanLyBanSachService: QuanLyBanSachService) { }
   BookList: bookhome[] = [];
   loadBookList() {
-    this.QuanLyBanSachService.GetBooks().subscribe({
+    this.QuanLyBanSachService.getBooks().subscribe({
       next: (list) => {
-        this.BookList = list.$values;
+        this.BookList = list;
       },
       error: (error) => {
         console.error('Lỗi khi tải danh sách Sách', error);
       }
     });
   }
-  ngOnInit() {
+  ngOnInit(): void {
+    this.loadBookList();
   }
 
 }
