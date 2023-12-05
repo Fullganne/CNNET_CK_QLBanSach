@@ -65,29 +65,19 @@
             <mat-card-content style="font-size: 18px; color: #FFF;font-weight: bold;">PHƯƠNG THỨC VẬN CHUYỂN</mat-card-content>
         </mat-card>
     <div class="check-order">
-        <table>
-            <tr>
-                <th></th>
-                <th>Tên sản phẩm</th>
-                <th>Đơn giá</th>
-                <th>Số lượng</th>
-                <th>Thành tiền</th>
-            </tr>
-            <tr>
-              <td><img src="assets/product-detail/product-small-0.jpg" alt=""></td>
-              <td>Tên sản phẩm</td>
-              <td>44.200<sup>đ</sup></td>
-              <td>2</td>
-              <td>88.400<sup>đ</sup></td>
-            </tr>
-            <tr>
-              <td><img src="assets/categoryimg/categoryimg1.jpg" alt=""></td>
-              <td>Tên sản phẩm</td>
-              <td>44.200<sup>đ</sup></td>
-              <td>2</td>
-              <td>88.400<sup>đ</sup></td>
-            </tr>
-          </table>
+      
+            <h2>Xác nhận thanh toán</h2>
+          
+            <div *ngFor="let item of getCartItems()">
+              {{ item.title }} - {{ item.quantity }} x {{ item.unitPrice | currency:'VND' }}
+            </div>
+          
+            <div class="total-amount">
+              <strong>Tổng thanh toán:</strong> {{ getSubtotal() | currency:'VND' }}
+            </div>
+          
+          
+      
     </div>
     </div>
 </div>
