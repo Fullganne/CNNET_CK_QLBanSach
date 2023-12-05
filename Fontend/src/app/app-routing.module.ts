@@ -5,6 +5,7 @@ import { UserComponent } from './pages/user/user.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { ProductComponent } from './pages/product/product.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { PaymentComponentNow } from './pages/paymentNow/paymentNow.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ModalComponent } from './component/modal/modal.component';
 import { LoginComponent } from './component/login/login.component';
@@ -44,6 +45,10 @@ const routes: Routes=[
     {
     path:'payment',
     component: PaymentComponent,
+    },
+    {
+    path:'paymentNow',
+    component: PaymentComponentNow,
     },
 {
     path:'produc/:id',
