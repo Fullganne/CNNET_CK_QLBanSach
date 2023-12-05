@@ -18,7 +18,10 @@ export class CartComponent {
     this.loadCartItems();
     
   }
-
+  getTotalQuantity(): number {
+    return this.cartItems.reduce((total, item) => total + item.quantity, 0);
+  }
+  
   loadCartItems(): void {
     this.cartItems = this.cartService.getCartItems();
   }
@@ -47,5 +50,16 @@ export class CartComponent {
   increment(): void {
     this.quantity++;
   }
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  }
+  getSubtotal(): number {
+    return this.cartItems.reduce((total, item) => total + item.unitPrice * item.quantity, 0);
+  }
+  getTotalAmount(): number {
+    // You may need to implement discount logic here if applicable
+    return this.getTotalPrice(); // For now, assuming total amount is the same as total price
+  }
+ 
   
 }

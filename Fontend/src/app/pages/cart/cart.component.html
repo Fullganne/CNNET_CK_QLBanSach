@@ -63,23 +63,23 @@
               <tbody>
                 <tr>
                   <td>Số lượng sản phẩm:</td>
-                  <!-- <td>{{ getTotalQuantity() }}</td> -->
+                  <td>{{ getTotalQuantity() }}</td>
                 </tr>
                 <tr>
                   <td>Tổng tiền hàng:</td>
-                  <!-- <td>{{ getTotalPrice() | currency:'VND' }}</td> -->
+                  <td>{{ getTotalPrice() | currency:'VND' }}</td>
                 </tr>
                 <tr>
                   <td>Tạm tính:</td>
-                  <!-- <td>{{ getSubtotal() | currency:'VND' }}</td> -->
+                  <td>{{ getSubtotal() | currency:'VND' }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td>Mã giảm giá:</td>
-                  <!-- <td>{{ appliedDiscount | currency:'VND' }}</td> -->
-                </tr>
+                  <td>{{ appliedDiscount | currency:'VND' }}</td>
+                </tr> -->
                 <tr>
                   <th>Tổng số tiền:</th>
-                  <!-- <th>{{ getTotalAmount() | currency:'VND' }}</th> -->
+                  <th>{{ getTotalAmount() | currency:'VND' }}</th>
                 </tr>
               </tbody>
             </table>
@@ -90,6 +90,7 @@
       <div class="product-right-button">
         <button mat-raised-button>TIẾP TỤC MUA SẮM</button>
         <!-- <button mat-raised-button (click)="checkout()">THANH TOÁN</button> -->
+        <button mat-raised-button routerLink="/payment">MUA NGAY</button>
       </div>
     </div>
   </div>

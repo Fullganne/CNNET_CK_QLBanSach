@@ -39,4 +39,14 @@ export class CartService {
   clearCart(): void {
     this.cartItems = [];
   }
+  getTotalPrice(): number {
+    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  }
+  getSubtotal(): number {
+    return this.cartItems.reduce((total, item) => total + item.unitPrice * item.quantity, 0);
+  }
+  getTotalAmount(): number {
+    // You may need to implement discount logic here if applicable
+    return this.getTotalPrice(); // For now, assuming total amount is the same as total price
+  }
 }
