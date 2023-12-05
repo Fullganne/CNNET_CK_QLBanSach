@@ -171,6 +171,11 @@ export class ProductComponent implements OnInit {
     // Hiển thị thông báo hoặc cập nhật giao diện người dùng nếu cần
   }
   
+  buyNow(product: bookhome): void {
+    this.cartService.addToTemporaryCart(product);
+    
+    this.router.navigate(['/paymentNow']);
+  }
 
 }
 // function processProductId(productId: string): string | null {

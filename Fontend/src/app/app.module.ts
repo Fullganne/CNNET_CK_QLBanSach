@@ -10,6 +10,7 @@ import { UserComponent } from './pages/user/user.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { ProductComponent } from './pages/product/product.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { PaymentComponentNow } from './pages/paymentNow/paymentNow.component';
 import { LoginComponent } from './component/login/login.component';
 
 import { CartComponent } from './pages/cart/cart.component';
@@ -59,6 +60,7 @@ import { TableBookComponent } from './pages/admin/Book/Table-Book/Table-Book.com
     AuthorCardComponent,
     CategoryComponent,
     PaymentComponent,
+    PaymentComponentNow,
     ModalComponent,
     LoginComponent,
     CartComponent,
