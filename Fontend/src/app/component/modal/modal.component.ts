@@ -2,11 +2,12 @@ import { Component, Output, EventEmitter, Renderer2, ElementRef, HostListener } 
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {Customer} from './Customer';
+import { LocalStorageService } from 'src/app/Services/local-storage.service';
+
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
-
 })
 
 export class ModalComponent {
@@ -18,7 +19,8 @@ export class ModalComponent {
 
     user: any = {}; // Đối tượng để lưu trữ dữ liệu nhập từ form
     cus:any={};
-    constructor(private http: HttpClient, private router: Router) {}
+    r:any={};
+    constructor(private http: HttpClient, private router: Router, private localStorageService: LocalStorageService) {}
 
     closeModal(): void {
       this.closeModalEvent.emit();
@@ -60,40 +62,44 @@ export class ModalComponent {
     loggedIn: boolean = true;
     isChecking: boolean = false;
     check() {
-      let isSuccess = false;
-      let p = ''; // Sử dụng let thay vì const
-      let t = ''; // Sử dụng let thay vì const
-
-      for (const dt of this.dt) {
-        const cleanPhone = dt.phone.trim();
-        const cleanPassword = dt.password.trim();
-
-        if (cleanPhone === this.cus.sdt && cleanPassword === this.cus.pass) {
-          isSuccess = true;
-          p = cleanPhone; // Gán giá trị mới cho p
-          t = cleanPassword; // Gán giá trị mới cho t
-          break;
+      const inputLogin = {
+        id: '',
+        fullName: '',
+        photo: '',
+        activated: true,
+        password: this.cus.pass,
+        email: '',
+        phone: this.cus.sdt,
+        carts: [],
+        orders: []
+      };
+    
+      this.http.post('https://localhost:7009/api/Login/signin', inputLogin).subscribe({
+        next: res => {
+          this.r = res;
+        },
+        error: error => {
+          alert('Đăng nhập không thành công 2');
         }
-
-        if (isSuccess) {
-          break;
-        }
-      }
-
-      console.log(p);
-      console.log(t);
-
-      if (isSuccess) {
+      });
+      if (this.r && this.r.StatusCode === 200) {
+        const loggedInUser = {
+          id: this.r.id,
+          fullName: this.r.fullName
+        };
+        this.localStorageService.setLoggedInUser(loggedInUser);
+        console.log(loggedInUser);
         alert('Đăng nhập thành công');
       } else {
-        alert('Đăng nhập không thành công');
+        alert('Đăng nhập không thành công 1');
       }
     }
+    
 
     register() {
       // Kiểm tra xác nhận mật khẩu
       //!isEmail(this.user.email)&&
-      if(!isPhoneNumber(this.user.email))
+      if(!isPhoneNumber(this.user.phone))
       {
         this.errorMessageEM='Số điện thoại không đúng.'
       }
@@ -129,7 +135,6 @@ export class ModalComponent {
         orders: []
       };
 
-      console.log(data);
       // Gửi dữ liệu đăng ký lên API
       this.http.post('https://localhost:7009/api/Login/signup', data).subscribe(
         (response) => {

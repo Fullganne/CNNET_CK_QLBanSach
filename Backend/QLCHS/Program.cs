@@ -14,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<QLBANSACHContext>(option => option.UseSqlServer
     (builder.Configuration.GetConnectionString("QLBANSACH")));
-builder.Services.AddAuthentication(x =>
+/*builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -29,7 +29,7 @@ builder.Services.AddAuthentication(x =>
         ValidateAudience = false,
         ValidateIssuer = false
     };
-});
+});*/
 builder.Services.AddCors(p => p.AddPolicy("MyCors", build =>
 {
     build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
@@ -46,7 +46,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors("MyCors");
 
-app.UseAuthentication();
+/*app.UseAuthentication();*/
 
 app.UseAuthorization();
 

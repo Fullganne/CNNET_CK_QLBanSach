@@ -14,4 +14,9 @@ export const sidebarData = [
         icon: 'fa-solid fa-clipboard',
         text: 'Đơn hàng',
     },
+    {
+        routerLink: '',
+        icon: 'fa fa-sign-out',
+        text: 'Thoát',
+    },
 ];
