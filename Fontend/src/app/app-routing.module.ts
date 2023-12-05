@@ -62,7 +62,6 @@ const routes: Routes=[
     { path: 'addAuthorAdmin', component: AddAuthorComponent},
     { path: 'editAuthorAdmin/:id', component: EditAuthorComponent},
     { path: 'bookAdmin', component: TableBookComponent},
-    
 ]
 
 @NgModule({

@@ -30,8 +30,6 @@
                 </div>
               </div>
                 <div class="register-right">
-                  <img src=" assets/login-logout/register.jpg" alt="" >
-
                 </div>
 
             </div>
@@ -41,19 +39,17 @@
         <mat-tab label="Đăng nhập" >
             <div class="form-login">
               <div class="login-left">
-                <img src=" assets/login-logout/login.jpg" alt="" >
-
               </div>
               <div class="login-right">
                   <div class="logo">
                     <img src="assets/logo.png" alt="">
                   </div>
-                  <div class="infomation-login">
+                  <form class="infomation-login">
                     <label class="lblhover" for="">Số điện thoại</label>
                     <input  [(ngModel)]="cus.sdt" name="sdt" type="text" class="input-login" >
                     <label class="lblhover"  for="">Mật khẩu</label>
                     <input [(ngModel)]="cus.pass" name="pass" type="password"class="input-login" >
-                  </div>
+                  </form>
                   <div class="remember">
                     <input type="checkbox"style="margin-right:5px;">
                     <label style="margin-right:70px; " >Nhớ mật khẩu</label>

@@ -55,8 +55,13 @@ namespace QLCHS.Controllers
             
             return Ok(new
             {
-                Token = "",
-                Message = "Logged In Successfully"
+                StatusCode = 200,
+                Message = "Logged In Successfully",
+                Customer = new
+                {
+                    user.Id,
+                    user.FullName
+                }
             });
         }
 

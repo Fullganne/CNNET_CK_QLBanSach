@@ -134,7 +134,7 @@ footer p {
 
 .highlighted-title-card {
   margin-bottom: 10px;
-  background-color: #97978D;
+  background-color: #48bced;
   border-radius: 5px;
 }
 
@@ -143,11 +143,12 @@ footer p {
   margin-left: 2%;
   margin-right: 2%;
   justify-content: space-between;
-background-color:#E9EAEE;
+  flex-wrap: wrap;
+  background-color:#E9EAEE;
 }
 
 .product-card {
-  width: calc(25% - 15px);
+  width: calc(20% - 15px);
   transition: transform 0.3s;
 }
 
@@ -187,7 +188,7 @@ background-color:#E9EAEE;
 
 .btn-xt {
   cursor: pointer;
-  background-color:#97978D;
+  background-color:#48bced;
   color: white;
   width: 150px;
   margin: auto;
@@ -273,7 +274,7 @@ background-color:#E9EAEE;
 
 .cartegory-right-bottom-item{
   position: relative;
-  width: calc(25% - 20px);
+  width: calc(20% - 20px);
   text-align: center;
   padding: 20px 0;
   margin: 10px;
