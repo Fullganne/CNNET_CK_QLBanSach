@@ -51,7 +51,7 @@ const routes: Routes=[
     component: PaymentComponentNow,
     },
 {
-    path:'produc/:id',
+    path:'product/:id',
     component: ProductComponent,
     },
     { path: 'modal', component: ModalComponent},

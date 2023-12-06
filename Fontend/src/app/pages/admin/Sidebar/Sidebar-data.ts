@@ -1,5 +1,10 @@
 export const sidebarData = [
     {
+        routerLink: '',
+        icon: 'fa-solid fa-home',
+        text: 'Trang chủ',
+    },
+    {
         routerLink: 'authorAdmin',
         icon: 'fa-solid fa-person',
         text: 'Tác giả',
