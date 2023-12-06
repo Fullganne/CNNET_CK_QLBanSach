@@ -38,9 +38,9 @@
 .form-login .login:nth-child(1)
 {
   position: relative;
-display: grid;
-width: 50%;
-background-color: rgb(235, 229, 220);
+  display: grid;
+  width: 50%;
+  background-color: rgb(235, 229, 220);
 }
 
 .form-login .login:nth-child(1)>img

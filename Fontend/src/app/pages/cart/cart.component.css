@@ -28,7 +28,7 @@
 .table-1 tbody, th, td, tr{
     width: 20%;
     text-align: center;
-    padding: 10px 0px;
+    padding: 10px 10px;
 
 }
 .table-1 tr td:first-child{
@@ -46,7 +46,7 @@
     width: 100%;
     border: 1px solid #E9EAEE;
     border-radius: 5px;
-    background-color:#E9EAEE;
+    background-color:#fff;
     margin: 0 40px 0 0px;
     padding-bottom: 30px;
     margin-bottom: 40px;
@@ -56,7 +56,7 @@
     width: 100%;
     border: 1px solid #E9EAEE;
     border-radius: 5px;
-    background-color:#E9EAEE;
+    background-color:#fff;
     margin: 0 40px 0 0px;
     /* padding-bottom: 30px; */
     margin-bottom: 40px;
@@ -64,7 +64,7 @@
 
 .highlighted-title-card {
     margin-bottom: 10px;
-    background-color: #97978D;
+    background-color: #48bced;
     border-radius: 5px;
 }
 
@@ -138,6 +138,6 @@ mat-form-field{
   margin-right: 10px;
 }
 .product-right-button button:hover{
-    background-color:#97978D ;
+    background-color:#48bced ;
     color: #fff;
 }
